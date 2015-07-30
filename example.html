@@ -122,7 +122,19 @@
 							<!-- Summit -->
 							<span class="byline"></span>
 							</br>
-							<form action="question.html?1" method="post">
+							<form action="hello.php" method="post" target="hidden_iframe" onsubmit="summitHandler()">
+
+							<script type='text/javascript'>
+								var submitted=false;
+								function summitHandler(){
+									document.getElementById("ss-submit").disabled = true;
+									submitted=true;
+								}
+							</script>
+							<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+								onload="if(submitted){
+								window.location = 'question.html?1';}">
+							</iframe>
 
 							<div class="ss-item ss-navigate">
 								<table id="navigation-table" style="margin: 0 auto;">
