@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<!--
+	Iridium by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>中文書法個別字好感度比較問卷</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<script type="text/javascript">
+		function getParam(){
+			var path=window.location.href;
+			var pos=path.indexOf("?");
+			if(pos > 0){
+				parm=path.substring(pos+1,path.length);
+			}
+			return parm;
+		};
+
+		$(document).ready(function(){
+			var minNumber = 1;
+			var maxNumber = 100;
+			var left_number = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+			var right_number = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+			while(left_number == right_number){
+				right_number = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+			}
+			$("input#entry_613993800").val(left_number);
+			$("input#entry_378439442").val(right_number);
+			$("input#entry_1125284529").val(getParam());
+
+			var comeinTime=new Date();
+			var h=comeinTime.getHours();
+			var m=comeinTime.getMinutes();
+			var s=comeinTime.getSeconds();
+			document.getElementById("entry.1177572638_hour").value = h;
+			document.getElementById("entry.1177572638_minute").value = m;
+			document.getElementById("entry.1177572638_second").value = s;
+			if(getParam() == '30'){
+				
+				document.getElementById("ss-submit").value = '提交';
+			}
+		});
+		</script>
+
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+
+	<body class="no-sidebar">
+
+
+		<!-- Bootstrap jQuery -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	    <!-- 依需要參考已編譯外掛版本（如下），或各自獨立的外掛版本 -->
+
+		<!-- Header -->
+		<div id="header">
+			<div class="container"> 
+				
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="index.html">中文書法個別字相對好感度問卷</a></h1>
+					<span>Design by NCCUCS VIPlab YuhRu,Lin</span>
+				</div>
+				
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li class="active"><a>問卷進行中</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="container">
+				<div class="row"> 
+					
+					<!-- Content -->
+					<div id="content" class="12u skel-cell-important">
+						<section>
+							<header>
+								<!-- Number of question -->
+								<script type="text/javascript">
+									function getParam(){
+										var path=window.location.href;
+										var pos=path.indexOf("?");
+										if(pos > 0){
+											parm=path.substring(pos+1,path.length);
+										}
+										else{
+											parm="";
+										}
+										return Number(parm);
+									};
+									function getProgressRatio(questionNumber){
+										var ratioProgess = questionNumber;
+										var totalQusetions = 30;
+										ratioProgess = ratioProgess/totalQusetions*100;
+										ratioProgess = Math.ceil(ratioProgess);
+										return ratioProgess;
+									};
+									function changeWidth(ratioProgess){
+										var ratio=ratioProgess+'%';
+										document.getElementById('progress-bar').style.width=ratio;
+									};
+								</script>
+								<div class="progress">
+								 	<div class="progress-bar progress-bar-warning" id="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%; color:black; font-size:18px;"><b>
+								    <script>var ratioP=getProgressRatio(getParam()-1);document.write(ratioP);changeWidth(ratioP);</script>%</b></div>
+								</div>
+								</br>
+								</br>
+								
+								<h2 align="center">第 <script>document.write(getParam());</script> 題</h2>
+							</header>
+							<!-- <h2>選項說明</br>
+								1:左圖比右圖好看很多</br>
+								2:左圖比右圖好看</br>
+								3:左圖和右圖一樣好看</br>
+								4:右圖比左圖好看</br>
+								5:右圖比左圖好看很多</br>
+							</h2>-->
+
+							<table class="image-pics" border="0" cellpadding="5" cellspacing="0" >
+								<tr>
+									<td><img class="image-pic" src="single/4_20.png" id="left-pic"/></td>
+									<td><img class="image-pic" src="single/6_1.png" id="right-pic"/></td>
+								</tr>
+							</table>
+
+							<form action="https://docs.google.com/forms/d/1hhXzKnq0oOlYRzF5US5MYZR2YH3_aFLYpBmFOMfS-fI/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="summitHandler()">
+
+							<script type='text/javascript'>
+								var submitted=false;
+								function summitHandler(){
+									document.getElementById("ss-submit").disabled = true;
+									var exitTime=new Date();
+									var h2=exitTime.getHours();
+									var m2=exitTime.getMinutes();
+									var s2=exitTime.getSeconds();
+									document.getElementById("entry.1009690695_hour").value = h2;
+									document.getElementById("entry.1009690695_minute").value = m2;
+									document.getElementById("entry.1009690695_second").value = s2;
+									submitted=true;
+								}
+							</script>
+							<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+								onload="if(submitted){
+								if(Number(getParam()) < 30){
+									window.location = 'question.html?'+(Number(getParam())+1);}
+								else{
+									window.location = 'complete.html';}}">
+							</iframe>
+
+							<!-- Selection -->
+							<table border="0" cellpadding="5" cellspacing="0" id="entry_343194996">
+								<tr aria-hidden="true">
+									<td class="ss-scalenumbers"></td>
+									<td class="ss-scalenumbers">
+										<label class="ss-scalenumber" for="group_343194996_1">1</label></td>
+									<td class="ss-scalenumbers">
+										<label class="ss-scalenumber" for="group_343194996_2">2</label></td>
+									<td class="ss-scalenumbers">
+										<label class="ss-scalenumber" for="group_343194996_3">3</label></td>
+									<td class="ss-scalenumbers">
+										<label class="ss-scalenumber" for="group_343194996_4">4</label></td>
+									<td class="ss-scalenumbers">
+										<label class="ss-scalenumber" for="group_343194996_5">5</label></td>
+									<td class="ss-scalenumbers"></td></tr>
+								<tr role="radiogroup" aria-label="Question  請在「1」到「5」之間選擇一個值。">
+									<td class="ss-scalerow ss-leftlabel">
+										<div aria-hidden="true" class="aria-todo"></div></td>
+									<td class="ss-scalerow">
+										<div class="ss-scalerow-fieldcell">
+											<input type="radio" name="entry.343194996" value="1" id="group_343194996_1" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></div></td>
+									<td class="ss-scalerow">
+										<div class="ss-scalerow-fieldcell">
+											<input type="radio" name="entry.343194996" value="2" id="group_343194996_2" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></div></td>
+									<td class="ss-scalerow">
+										<div class="ss-scalerow-fieldcell">
+											<input type="radio" name="entry.343194996" value="3" id="group_343194996_3" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></div></td>
+									<td class="ss-scalerow">
+										<div class="ss-scalerow-fieldcell">
+											<input type="radio" name="entry.343194996" value="4" id="group_343194996_4" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></div></td>
+									<td class="ss-scalerow">
+										<div class="ss-scalerow-fieldcell">
+											<input type="radio" name="entry.343194996" value="5" id="group_343194996_5" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></div></td>
+									<td class="ss-scalerow ss-rightlabel" aria-hidden="true"></td>
+								</tr>
+							</table>
+							<!-- Selection end... -->
+
+							<!-- Left image  -->
+							<div class="ss-form-question errorbox-good" role="listitem" style="display:none">
+								<div dir="ltr" class="ss-item  ss-text">
+									<div class="ss-form-entry">
+										<label class="ss-q-item-label" for="entry_613993800">
+											<div class="ss-q-title">左圖</div>
+											<div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+										</label>
+										<input type="text" name="entry.613993800" value="" class="ss-q-short" id="entry_613993800" dir="auto" aria-label="左圖  " title="">
+										<div class="error-message" id="164398085_errorMessage"></div>
+										<div class="required-message">這是必填問題</div>
+									</div>
+								</div>
+							</div>
+							<!-- Left image end... -->
+
+							<!-- Right image -->
+							<div class="ss-form-question errorbox-good" role="listitem" style="display:none">
+								<div dir="ltr" class="ss-item  ss-text">
+									<div class="ss-form-entry">
+										<label class="ss-q-item-label" for="entry_378439442">
+											<div class="ss-q-title">右圖</div>
+											<div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+										</label>
+										<input type="text" name="entry.378439442" value="" class="ss-q-short" id="entry_378439442" dir="auto" aria-label="右圖  " title="">
+										<div class="error-message" id="890679381_errorMessage"></div>
+										<div class="required-message">這是必填問題</div>
+									</div>
+								</div>
+							</div>
+							<!-- Right image end... -->
+
+							<!-- Example or not -->
+							<div class="ss-form-question errorbox-good" role="listitem" style="display:none">
+								<div dir="ltr" class="ss-item  ss-text">
+									<div class="ss-form-entry">
+										<label class="ss-q-item-label" for="entry_1125284529">
+											<div class="ss-q-title">是否為範例題</div>
+											<div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+										</label>
+										<input type="text" name="entry.1125284529" value="" class="ss-q-short" id="entry_1125284529" dir="auto" aria-label="是否為範例題  " title="">
+										<div class="error-message" id="1135765308_errorMessage"></div>
+										<div class="required-message">這是必填問題</div>
+									</div>
+								</div>
+							</div>
+							<!-- Example or not  end... -->
+
+							<!-- Answer start time -->
+							<div class="ss-form-question errorbox-good" role="listitem" style="display:none">
+								<div dir="ltr" class="ss-item  ss-time">
+									<div class="ss-form-entry">
+									<label class="ss-q-item-label" for="entry_1177572638">
+										<div class="ss-q-title">開始回答時間</div>
+										<div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+									</label>
+									<div class="ss-q-time">
+								<div class="ss-datetime-box goog-inline-block" dir="ltr"><select name="entry.1177572638_hour" id="entry.1177572638_hour" aria-label="&#23567;&#26178;"><option value="">&#23567;&#26178;</option>
+							<option value="0">0</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option> <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> <option value="9">9</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option> <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option> <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> <option value="30">30</option> <option value="31">31</option> <option value="32">32</option> <option value="33">33</option> <option value="34">34</option> <option value="35">35</option> <option value="36">36</option> <option value="37">37</option> <option value="38">38</option> <option value="39">39</option> <option value="40">40</option> <option value="41">41</option> <option value="42">42</option> <option value="43">43</option> <option value="44">44</option> <option value="45">45</option> <option value="46">46</option> <option value="47">47</option> <option value="48">48</option> <option value="49">49</option> <option value="50">50</option> <option value="51">51</option> <option value="52">52</option> <option value="53">53</option> <option value="54">54</option> <option value="55">55</option> <option value="56">56</option> <option value="57">57</option> <option value="58">58</option> <option value="59">59</option> <option value="60">60</option> <option value="61">61</option> <option value="62">62</option> <option value="63">63</option> <option value="64">64</option> <option value="65">65</option> <option value="66">66</option> <option value="67">67</option> <option value="68">68</option> <option value="69">69</option> <option value="70">70</option> <option value="71">71</option> <option value="72">72</option></select>
+							:
+							<select name="entry.1177572638_minute" id="entry.1177572638_minute" aria-label="&#20998;&#37912;"><option value="">&#20998;&#37912;</option>
+							<option value="0">00</option> <option value="1">01</option> <option value="2">02</option> <option value="3">03</option> <option value="4">04</option> <option value="5">05</option> <option value="6">06</option> <option value="7">07</option> <option value="8">08</option> <option value="9">09</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option> <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option> <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> <option value="30">30</option> <option value="31">31</option> <option value="32">32</option> <option value="33">33</option> <option value="34">34</option> <option value="35">35</option> <option value="36">36</option> <option value="37">37</option> <option value="38">38</option> <option value="39">39</option> <option value="40">40</option> <option value="41">41</option> <option value="42">42</option> <option value="43">43</option> <option value="44">44</option> <option value="45">45</option> <option value="46">46</option> <option value="47">47</option> <option value="48">48</option> <option value="49">49</option> <option value="50">50</option> <option value="51">51</option> <option value="52">52</option> <option value="53">53</option> <option value="54">54</option> <option value="55">55</option> <option value="56">56</option> <option value="57">57</option> <option value="58">58</option> <option value="59">59</option></select>
+							:
+							<select name="entry.1177572638_second" id="entry.1177572638_second" aria-label="秒"><option value="">秒</option>
+							<option value="0">00</option> <option value="1">01</option> <option value="2">02</option> <option value="3">03</option> <option value="4">04</option> <option value="5">05</option> <option value="6">06</option> <option value="7">07</option> <option value="8">08</option> <option value="9">09</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option> <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option> <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> <option value="30">30</option> <option value="31">31</option> <option value="32">32</option> <option value="33">33</option> <option value="34">34</option> <option value="35">35</option> <option value="36">36</option> <option value="37">37</option> <option value="38">38</option> <option value="39">39</option> <option value="40">40</option> <option value="41">41</option> <option value="42">42</option> <option value="43">43</option> <option value="44">44</option> <option value="45">45</option> <option value="46">46</option> <option value="47">47</option> <option value="48">48</option> <option value="49">49</option> <option value="50">50</option> <option value="51">51</option> <option value="52">52</option> <option value="53">53</option> <option value="54">54</option> <option value="55">55</option> <option value="56">56</option> <option value="57">57</option> <option value="58">58</option> <option value="59">59</option></select>
+
+							<div class="ss-datetime-box-spacer goog-inline-block"></div></div></div></div></div></div>
+							<!-- Answer start time  end... -->
+
+							<!-- Answer over time -->
+							<div class="ss-form-question errorbox-good" role="listitem" style="display:none">
+								<div dir="ltr" class="ss-item  ss-time">
+										<div class="ss-form-entry">
+										<label class="ss-q-item-label" for="entry_1009690695">
+											<div class="ss-q-title">提交時間</div>
+											<div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+										</label>
+										<div class="ss-q-time">
+									<div class="ss-datetime-box goog-inline-block" dir="ltr"><select name="entry.1009690695_hour" id="entry.1009690695_hour" aria-label="&#23567;&#26178;"><option value="">&#23567;&#26178;</option>
+							<option value="0">0</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option> <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> <option value="9">9</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option> <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option> <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> <option value="30">30</option> <option value="31">31</option> <option value="32">32</option> <option value="33">33</option> <option value="34">34</option> <option value="35">35</option> <option value="36">36</option> <option value="37">37</option> <option value="38">38</option> <option value="39">39</option> <option value="40">40</option> <option value="41">41</option> <option value="42">42</option> <option value="43">43</option> <option value="44">44</option> <option value="45">45</option> <option value="46">46</option> <option value="47">47</option> <option value="48">48</option> <option value="49">49</option> <option value="50">50</option> <option value="51">51</option> <option value="52">52</option> <option value="53">53</option> <option value="54">54</option> <option value="55">55</option> <option value="56">56</option> <option value="57">57</option> <option value="58">58</option> <option value="59">59</option> <option value="60">60</option> <option value="61">61</option> <option value="62">62</option> <option value="63">63</option> <option value="64">64</option> <option value="65">65</option> <option value="66">66</option> <option value="67">67</option> <option value="68">68</option> <option value="69">69</option> <option value="70">70</option> <option value="71">71</option> <option value="72">72</option></select>
+							:
+							<select name="entry.1009690695_minute" id="entry.1009690695_minute" aria-label="&#20998;&#37912;"><option value="">&#20998;&#37912;</option>
+							<option value="0">00</option> <option value="1">01</option> <option value="2">02</option> <option value="3">03</option> <option value="4">04</option> <option value="5">05</option> <option value="6">06</option> <option value="7">07</option> <option value="8">08</option> <option value="9">09</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option> <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option> <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> <option value="30">30</option> <option value="31">31</option> <option value="32">32</option> <option value="33">33</option> <option value="34">34</option> <option value="35">35</option> <option value="36">36</option> <option value="37">37</option> <option value="38">38</option> <option value="39">39</option> <option value="40">40</option> <option value="41">41</option> <option value="42">42</option> <option value="43">43</option> <option value="44">44</option> <option value="45">45</option> <option value="46">46</option> <option value="47">47</option> <option value="48">48</option> <option value="49">49</option> <option value="50">50</option> <option value="51">51</option> <option value="52">52</option> <option value="53">53</option> <option value="54">54</option> <option value="55">55</option> <option value="56">56</option> <option value="57">57</option> <option value="58">58</option> <option value="59">59</option></select>
+							:
+							<select name="entry.1009690695_second" id="entry.1009690695_second" aria-label="秒"><option value="">秒</option>
+							<option value="0">00</option> <option value="1">01</option> <option value="2">02</option> <option value="3">03</option> <option value="4">04</option> <option value="5">05</option> <option value="6">06</option> <option value="7">07</option> <option value="8">08</option> <option value="9">09</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option> <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option> <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> <option value="30">30</option> <option value="31">31</option> <option value="32">32</option> <option value="33">33</option> <option value="34">34</option> <option value="35">35</option> <option value="36">36</option> <option value="37">37</option> <option value="38">38</option> <option value="39">39</option> <option value="40">40</option> <option value="41">41</option> <option value="42">42</option> <option value="43">43</option> <option value="44">44</option> <option value="45">45</option> <option value="46">46</option> <option value="47">47</option> <option value="48">48</option> <option value="49">49</option> <option value="50">50</option> <option value="51">51</option> <option value="52">52</option> <option value="53">53</option> <option value="54">54</option> <option value="55">55</option> <option value="56">56</option> <option value="57">57</option> <option value="58">58</option> <option value="59">59</option></select>
+
+							<div class="ss-datetime-box-spacer goog-inline-block"></div></div></div></div></div></div>
+							<!-- Answer over time  end... -->
+
+							<!-- Summit -->
+							<span class="byline"></span>
+							</br>
+							<div class="ss-item ss-navigate">
+								<table id="navigation-table" style="margin: 0 auto;">
+									<tbody><tr><td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+										<input type="submit" name="submit" value="下一題" id="ss-submit" class="jfk-button jfk-button-action ">
+									</td></tr></tbody>
+								</table>
+							</div>
+							<!-- Summit end... -->
+
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<div class="container">
+				Design: Lin,Yuh-Ru. VIPLab, NCCU.
+				<a href="mailto:102753018@nccu.edu.tw">Contact me</a>
+			</div>
+		</div>
+		
+	</body>
+</html>
