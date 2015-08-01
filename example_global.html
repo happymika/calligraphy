@@ -63,16 +63,31 @@
 									若您覺得右邊的作品比左邊的作品<u>好看很多</u>，請選擇最右邊的選項：5。</br>
 
 								</h1></p>
-								
 							</header>
+
+
 
 							<table class="image-pics" border="0" cellpadding="5" cellspacing="0" >
 								<div class="12u skel-cell-important" style="font-size:18px;" ><p><h1 align="center">< 範例 ></h1></p></div>
 								<tr>
-									<td><img class="image-pic" src="single/4_20.png" id="left-pic"/></td>
-									<td><img class="image-pic" src="single/6_1.png" id="right-pic"/></td>
+									<td><img class="image-pic-global" src="" id="left-pic"/></td>
+									<td><img class="image-pic-global" src="" id="right-pic"/></td>
 								</tr>
 							</table>
+
+							<!-- Read database... -->
+							<script type="text/javascript">
+								function setimages(json) {
+									var leftPic = json.feed.entry[24].gsx$link.$t;
+								    var rightPic = json.feed.entry[51].gsx$link.$t;	
+									$("#left-pic").attr("src",leftPic);
+									$("#right-pic").attr("src",rightPic);
+								};
+							</script>
+							<script type="text/javascript" 
+									src="https://spreadsheets.google.com/feeds/list/1T27kiaBQ6C4TB_o_B1KwF9zmYv0ek47-kb8FjpN3qRs/default/public/values?alt=json-in-script&callback=setimages">
+							</script>
+							<!-- Read database end... -->
 
 							<!-- Selection -->
 							<table border="0" cellpadding="5" cellspacing="0" id="entry_343194996">
@@ -113,9 +128,9 @@
 							<!-- Selection end... -->
 
 							<p><h1 align="center"></br>
-								為維護著作權人權益，恕我們除去落款部分。</br>
+								為維護著作權人權益，問卷的所有書法作品皆去除落款區塊，請見諒。</br>
 								由於問題沒有正確答案，只要依您的想法作答即可。</br>
-								作答過程請不要回上一頁，感謝您的配合。</br></br>
+								作答過程請不要回上一頁，感謝您的配合！</br></br>
 								問卷即將開始，祝您作答愉快 :)
 							</h1></p>
 
