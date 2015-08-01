@@ -17,39 +17,28 @@
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
 		<script type="text/javascript">
-		function getParam(){
-			var path=window.location.href;
-			var pos=path.indexOf("?");
-			if(pos > 0){
-				parm=path.substring(pos+1,path.length);
-			}
-			return parm;
-		};
+			function getParam(){
+				var path=window.location.href;
+				var pos=path.indexOf("?");
+				if(pos > 0){
+					parm=path.substring(pos+1,path.length);}
+				return parm;
+			};
 
-		$(document).ready(function(){
-			var minNumber = 1;
-			var maxNumber = 100;
-			var left_number = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
-			var right_number = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
-			while(left_number == right_number){
-				right_number = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
-			}
-			$("input#entry_188276586").val(left_number);
-			$("input#entry_1362186113").val(right_number);
-			$("input#entry_1483683820").val(getParam());
-
-			var comeinTime=new Date();
-			var h=comeinTime.getHours();
-			var m=comeinTime.getMinutes();
-			var s=comeinTime.getSeconds();
-			document.getElementById("entry.182573772_hour").value = h;
-			document.getElementById("entry.182573772_minute").value = m;
-			document.getElementById("entry.182573772_second").value = s;
-			if(getParam() == '30'){
-				
-				document.getElementById("ss-submit").value = '提交';
-			}
-		});
+			$(document).ready(function(){
+				$("input#entry_1483683820").val(getParam());
+				var comeinTime=new Date();
+				var h=comeinTime.getHours();
+				var m=comeinTime.getMinutes();
+				var s=comeinTime.getSeconds();
+				document.getElementById("entry.182573772_hour").value = h;
+				document.getElementById("entry.182573772_minute").value = m;
+				document.getElementById("entry.182573772_second").value = s;
+				//total questions... have to modify 3 places. 
+				if(getParam() == '20'){
+					document.getElementById("ss-submit").value = '提交';
+				}
+			});
 		</script>
 
 		<noscript>
@@ -75,7 +64,7 @@
 				
 				<!-- Logo -->
 				<div id="logo">
-					<h1><a href="index.html">中文書法個別字相對好感度問卷</a></h1>
+					<h1><a href="index_global.html">中文書法作品好感度比較問卷</a></h1>
 					<span></span>
 				</div>
 				
@@ -92,7 +81,7 @@
 		<div id="main">
 			<div class="container">
 				<div class="row"> 
-					
+
 					<!-- Content -->
 					<div id="content" class="12u skel-cell-important">
 						<section>
@@ -112,7 +101,7 @@
 									};
 									function getProgressRatio(questionNumber){
 										var ratioProgess = questionNumber;
-										var totalQusetions = 30;
+										var totalQusetions = 20;
 										ratioProgess = ratioProgess/totalQusetions*100;
 										ratioProgess = Math.ceil(ratioProgess);
 										return ratioProgess;
@@ -131,18 +120,22 @@
 								
 								<h2 align="center">第 <script>document.write(getParam());</script> 題</h2>
 							</header>
-							<!-- <h2>選項說明</br>
-								1:左圖比右圖好看很多</br>
-								2:左圖比右圖好看</br>
-								3:左圖和右圖一樣好看</br>
-								4:右圖比左圖好看</br>
-								5:右圖比左圖好看很多</br>
-							</h2>-->
+
+							<div onclick="obj=document.getElementById('explanation').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;"><h2 align="center">選項說明</h2></a></div>
+							<div id="explanation" style="display:none; clear:both;">
+								<h2 align="center">
+									1: 左圖比右圖好看很多</br>
+									2: 左圖比右圖好看</br>
+									3: 左圖和右圖一樣好看</br>
+									4: 右圖比左圖好看</br>
+									5: 右圖比左圖好看很多</br>
+								</h2>
+							</div>
 
 							<table class="image-pics" border="0" cellpadding="5" cellspacing="0" >
 								<tr>
-									<td><img class="image-pic" src="single/4_20.png" id="left-pic"/></td>
-									<td><img class="image-pic" src="single/6_1.png" id="right-pic"/></td>
+									<td><img class="image-pic-global" src="" id="left-pic"/></td>
+									<td><img class="image-pic-global" src="" id="right-pic"/></td>
 								</tr>
 							</table>
 
@@ -164,7 +157,7 @@
 							</script>
 							<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
 								onload="if(submitted){
-								if(Number(getParam()) < 30){
+								if(Number(getParam()) < 20){
 									window.location = 'question_global.html?'+(Number(getParam())+1);}
 								else{
 									window.location = 'complete_global.html';}}">
@@ -240,23 +233,32 @@
 							</div>
 							<!-- Right image end... -->
 
+							<!-- Read database... -->
 							<script type="text/javascript">
-								function test(json) {
-									var a=json.feed.entry.length;
-
-									for (var i = 0; i < a; i++) {
-										var b = json.feed.entry[i].gsx$index.$t;
-									    var c = json.feed.entry[i].gsx$link.$t;
-									    document.write(b + " " + c + "</br>");
+								function setimages(json) {
+									var minNumber = 1;
+									var maxNumber = 63;
+									var left_number = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+									var right_number = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+									while(left_number == right_number){
+										right_number = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
 									}
-								}
-							</script>
-							<script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/1T27kiaBQ6C4TB_o_B1KwF9zmYv0ek47-kb8FjpN3qRs/od6/public/values?alt=json-in-script&callback=test'>
-							</script>
+									$("input#entry_188276586").val(left_number);
+									$("input#entry_1362186113").val(right_number);
 
+									var leftPic = json.feed.entry[left_number-1].gsx$link.$t;
+								    var rightPic = json.feed.entry[right_number-1].gsx$link.$t;	
+									$("#left-pic").attr("src",leftPic);
+									$("#right-pic").attr("src",rightPic);
+								};
+							</script>
+							<script type="text/javascript" 
+									src="https://spreadsheets.google.com/feeds/list/1T27kiaBQ6C4TB_o_B1KwF9zmYv0ek47-kb8FjpN3qRs/default/public/values?alt=json-in-script&callback=setimages">
+							</script>
+							<!-- Read database end... -->
 
 							<!-- Example or not -->
-							<div class="ss-form-question errorbox-good" role="listitem">
+							<div class="ss-form-question errorbox-good" role="listitem" style="display:none">
 								<div dir="ltr" class="ss-item  ss-text">
 									<div class="ss-form-entry">
 										<label class="ss-q-item-label" for="entry_1483683820">
