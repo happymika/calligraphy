@@ -51,16 +51,23 @@
 				<div class="row"> 
 					
 					<!-- Content -->
-					<div id="content" class="12u skel-cell-important">
+					<div id="content" class="12u skel-cell-important" style="text-align: center;">
 						<section>
 							<header>
-								<h2 align="center">問卷到此結束，再次感謝您的協助 :)</h2></br>
-								<h1 align="center"> 對本問卷有興趣的朋友，非常歡迎您多做幾次喔！每次的題目都不一樣 :D</br>
-								↓ 點選copy複製本問卷網址，邀請親朋好友一起來填問卷 ↓ </h2>
-								<input type="text" class="hide" id="link" value="#" style="width: 148px;">
-								<a href="#" onclick="var copyLink = document.getElementById("link").value;window.clipboardData.setData("Text",copyLink);return false;">
-									<input type="button" id="copy" class="btn btn-primary" value="複製網址">
-								</a>
+								<h2>問卷到此結束，再次感謝您的協助 :)</h2></br>
+								<h1> 對本問卷有興趣的朋友，非常歡迎您多做幾次喔！每次的題目都不一樣 :D</br>
+								↓ 複製本問卷網址，邀請親朋好友一起來填問卷 ↓ </h1>
+
+								<div class="input-group">
+									<input type="text" id="copylinkinput" class="form-control" value="http://happymika.github.io/calligraphy/index_global.html" aria-describedby="basic-addon1">
+								</div>
+
+								<script type="text/javascript">
+									$('#copylinkinput').bind('click', function() {
+									    this.select();
+									});
+								</script>
+
 							</header>
 						</section>
 					</div>
